@@ -1,23 +1,3 @@
-/* ── Local fonts ── */
-@font-face {
-  font-family: 'NewCM';
-  src: url('fonts/NewCM10-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'NewCMSans';
-  src: url('fonts/NewCMSans10-Book.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'NewCMSans';
-  src: url('fonts/NewCMSans10-BookOblique.woff') format('woff');
-  font-weight: 400;
-  font-style: italic;
-}
-
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -242,6 +222,13 @@ h3 {
   vertical-align: middle;
   letter-spacing: 0.02em;
   white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.badge:hover {
+  background: var(--navy);
+  color: #eef2f9;
 }
 
 .paper-authors {
@@ -458,7 +445,13 @@ footer {
 /* ── Responsive ── */
 @media (max-width: 660px) {
   .hero { grid-template-columns: 1fr; gap: 1.5rem; }
-  .hero-photo { width: 100%; height: 300px; }
-  h1 { font-size: 3rem; }
+  .hero-photo { width: 100%; }
+  .hero-photo-img { width: 100%; height: 320px; }
+  .hero-photo img { object-position: center 30%; }
+  h1 { font-size: 2.8rem; }
   .nav-name { display: none; }
+  nav ul { gap: 0; }
+  nav ul li a { padding: 0.3rem 0.6rem; font-size: 0.95rem; }
+  .carousel { height: 55vh; }
+  h2 { font-size: 2.2rem; }
 }

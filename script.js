@@ -15,12 +15,21 @@ function showSection(id) {
 allSectionLinks.forEach(function(a) {
   a.addEventListener('click', function(e) {
     e.preventDefault();
-    showSection(this.dataset.section);
+    var id = this.dataset.section;
+    history.pushState(null, '', '#' + id);
+    showSection(id);
   });
 });
 
-// Show 'about' by default
-showSection('about');
+// Handle back/forward browser navigation
+window.addEventListener('popstate', function() {
+  var id = location.hash.replace('#', '') || 'about';
+  showSection(id);
+});
+
+// Show section based on URL hash, or default to 'about'
+var initial = location.hash.replace('#', '') || 'about';
+showSection(initial);
 
 // ── Carousel ──
 (function() {

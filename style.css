@@ -42,6 +42,7 @@ nav {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text);
+  text-decoration: none;
 }
 
 nav ul {
